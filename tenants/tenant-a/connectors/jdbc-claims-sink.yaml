@@ -4,11 +4,11 @@ kind: Mapping
 metadata:
   name: jdbc-claims-sink
   owner: platform-team
-  revision: 2
-  updatedAt: 2026-03-03T14:09:17.174060148Z
-  lastPublishedAt: 2026-03-03T14:09:17.174060148Z
+  revision: 3
+  updatedAt: 2026-03-03T15:30:02.128455253Z
+  lastPublishedAt: 2026-03-03T15:30:02.128455253Z
   lastPublishResult: SUCCESS
-  commitSha: null
+  commitSha: 2f22c94
 
 selector:
   connectorName: jdbc-claims-sink
@@ -36,9 +36,5 @@ fields:
     required: false
   - target: claimStatus
     path: "$.claim.status"
-    type: STRING
-    required: false
-  - target: serviceDate
-    path: "$.claim.serviceDate"
     type: STRING
     required: false
