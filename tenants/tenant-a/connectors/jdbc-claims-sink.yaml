@@ -1,0 +1,44 @@
+apiVersion: taas/v1
+kind: Mapping
+
+metadata:
+  name: jdbc-claims-sink
+  owner: platform-team
+  revision: 2
+  updatedAt: 2026-03-03T14:09:17.174060148Z
+  lastPublishedAt: 2026-03-03T14:09:17.174060148Z
+  lastPublishResult: SUCCESS
+  commitSha: null
+
+selector:
+  connectorName: jdbc-claims-sink
+
+output:
+  mode: CONNECT_MAP
+  complexTypes: NATIVE_JSON
+
+fields:
+  - target: claimId
+    path: "$.claim.id"
+    type: STRING
+    required: false
+  - target: memberId
+    path: "$.claim.member.id"
+    type: STRING
+    required: false
+  - target: providerId
+    path: "$.claim.provider.id"
+    type: STRING
+    required: false
+  - target: claimAmount
+    path: "$.claim.totalAmount"
+    type: STRING
+    required: false
+  - target: claimStatus
+    path: "$.claim.status"
+    type: STRING
+    required: false
+  - target: serviceDate
+    path: "$.claim.serviceDate"
+    type: STRING
+    required: false
