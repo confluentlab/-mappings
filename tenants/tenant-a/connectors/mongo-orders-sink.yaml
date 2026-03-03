@@ -5,8 +5,8 @@ metadata:
   name: mongo-orders-sink
   owner: order-team
   revision: 2
-  updatedAt: 2026-03-03T12:32:12.470756252Z
-  lastPublishedAt: 2026-03-03T12:32:12.470756252Z
+  updatedAt: 2026-03-03T12:58:07.938179906Z
+  lastPublishedAt: 2026-03-03T12:58:07.938179906Z
   lastPublishResult: SUCCESS
   commitSha: null
 
