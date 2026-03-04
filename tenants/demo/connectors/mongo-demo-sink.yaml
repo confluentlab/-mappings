@@ -4,11 +4,11 @@ kind: Mapping
 metadata:
   name: mongo-demo-sink
   owner: demo
-  revision: 2
-  updatedAt: 2026-03-04T05:14:43.664608554Z
-  lastPublishedAt: 2026-03-04T05:14:43.664608554Z
+  revision: 3
+  updatedAt: 2026-03-04T05:17:25.907847423Z
+  lastPublishedAt: 2026-03-04T05:17:25.907847423Z
   lastPublishResult: SUCCESS
-  commitSha: null
+  commitSha: 0719ba9
 
 selector:
   connectorName: mongo-demo-sink
@@ -28,5 +28,9 @@ fields:
     required: false
   - target: amount
     path: "$.claim.totalAmount.value"
+    type: STRING
+    required: false
+  - target: newField
+    path: "$.claim.totalAmount"
     type: STRING
     required: false
