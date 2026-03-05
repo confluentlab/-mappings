@@ -1,0 +1,33 @@
+apiVersion: taas/v1
+kind: Mapping
+
+metadata:
+  name: orders
+  owner: platform-team
+  revision: 2
+  updatedAt: 2026-03-05T16:56:23.306187211Z
+  lastPublishedAt: 2026-03-05T16:56:23.306187211Z
+  lastPublishResult: SUCCESS
+  commitSha: null
+
+selector:
+  connectorName: orders
+
+output:
+  mode: CONNECT_MAP
+  complexTypes: NATIVE_JSON
+
+fields:
+  - target: claimId
+    path: "$.claim.id"
+    type: STRING
+    required: false
+    mode: JSON
+  - target: memberId
+    path: "$.patient.id"
+    type: STRING
+    required: false
+  - target: amount
+    path: "$.claim.amount"
+    type: STRING
+    required: false
