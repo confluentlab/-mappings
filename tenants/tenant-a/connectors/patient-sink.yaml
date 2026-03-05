@@ -1,0 +1,44 @@
+apiVersion: taas/v1
+kind: Mapping
+
+metadata:
+  name: patient-sink
+  owner: platform-team
+  revision: 2
+  updatedAt: 2026-03-05T17:01:06.320550736Z
+  lastPublishedAt: 2026-03-05T17:01:06.320550736Z
+  lastPublishResult: SUCCESS
+  commitSha: null
+
+selector:
+  connectorName: patient-sink
+
+output:
+  mode: CONNECT_MAP
+  complexTypes: NATIVE_JSON
+
+fields:
+  - target: patient_resource
+    path: "$.entry[?(@.resource.resourceType == 'Patient')].resource"
+    type: STRING
+    required: true
+  - target: patient_id
+    path: "$.entry[?(@.resource.resourceType == 'Patient')].resource.id"
+    type: STRING
+    required: true
+  - target: patient_given_name
+    path: "$.entry[?(@.resource.resourceType == 'Patient')].resource.name[0].given[0]"
+    type: STRING
+    required: false
+  - target: patient_family_name
+    path: "$.entry[?(@.resource.resourceType == 'Patient')].resource.name[0].family"
+    type: STRING
+    required: false
+  - target: patient_gender
+    path: "$.entry[?(@.resource.resourceType == 'Patient')].resource.gender"
+    type: STRING
+    required: false
+  - target: patient_birth_date
+    path: "$.entry[?(@.resource.resourceType == 'Patient')].resource.birthDate"
+    type: STRING
+    required: false
