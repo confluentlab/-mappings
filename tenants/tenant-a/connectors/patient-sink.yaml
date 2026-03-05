@@ -4,11 +4,11 @@ kind: Mapping
 metadata:
   name: patient-sink
   owner: platform-team
-  revision: 2
-  updatedAt: 2026-03-05T17:01:06.320550736Z
-  lastPublishedAt: 2026-03-05T17:01:06.320550736Z
+  revision: 3
+  updatedAt: 2026-03-05T18:02:08.144177028Z
+  lastPublishedAt: 2026-03-05T18:02:08.144177028Z
   lastPublishResult: SUCCESS
-  commitSha: null
+  commitSha: 4f32bbd
 
 selector:
   connectorName: patient-sink
@@ -26,10 +26,6 @@ fields:
     path: "$.entry[?(@.resource.resourceType == 'Patient')].resource.id"
     type: STRING
     required: true
-  - target: patient_given_name
-    path: "$.entry[?(@.resource.resourceType == 'Patient')].resource.name[0].given[0]"
-    type: STRING
-    required: false
   - target: patient_family_name
     path: "$.entry[?(@.resource.resourceType == 'Patient')].resource.name[0].family"
     type: STRING
