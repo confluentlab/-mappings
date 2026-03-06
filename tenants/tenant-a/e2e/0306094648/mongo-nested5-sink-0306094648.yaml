@@ -1,0 +1,43 @@
+apiVersion: taas/v1
+kind: Mapping
+
+metadata:
+  name: mongo-nested5-sink-0306094648
+  owner: admin
+  ownerTeam: "platform-team"
+  dataClass: INTERNAL
+  governanceNotes: "E2E nested5 mapping test"
+  revision: 2
+  updatedAt: 2026-03-06T17:46:48.692295666Z
+  lastPublishedAt: 2026-03-06T17:46:48.692295666Z
+  lastPublishResult: SUCCESS
+  commitSha: null
+
+selector:
+  connectorName: mongo-nested5-sink-0306094648
+
+output:
+  mode: CONNECT_MAP
+  complexTypes: NATIVE_JSON
+
+fields:
+  - target: firstName
+    path: "$.claim.patient.identity.demographics.name.first"
+    type: STRING
+    required: false
+  - target: lastName
+    path: "$.claim.patient.identity.demographics.name.last"
+    type: STRING
+    required: false
+  - target: email
+    path: "$.claim.patient.identity.contact.email"
+    type: STRING
+    required: false
+  - target: city
+    path: "$.claim.provider.facility.location.address.city"
+    type: STRING
+    required: false
+  - target: traceId
+    path: "$.claim.event.meta.lineage.trace.id"
+    type: STRING
+    required: false
