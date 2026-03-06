@@ -1,0 +1,35 @@
+apiVersion: taas/v1
+kind: Mapping
+
+metadata:
+  name: demo
+  owner: platform-team
+  ownerTeam: "platform-team"
+  dataClass: INTERNAL
+  governanceNotes: null
+  revision: 2
+  updatedAt: 2026-03-06T09:49:52.830103232Z
+  lastPublishedAt: 2026-03-06T09:49:52.830103232Z
+  lastPublishResult: SUCCESS
+  commitSha: null
+
+selector:
+  connectorName: demo
+
+output:
+  mode: CONNECT_MAP
+  complexTypes: NATIVE_JSON
+
+fields:
+  - target: id
+    path: "$.claim.id"
+    type: STRING
+    required: false
+  - target: amount
+    path: "$.claim.amount"
+    type: STRING
+    required: false
+  - target: id2
+    path: "$.patient.id"
+    type: STRING
+    required: false
