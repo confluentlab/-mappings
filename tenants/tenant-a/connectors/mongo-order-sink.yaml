@@ -1,0 +1,35 @@
+apiVersion: taas/v1
+kind: Mapping
+
+metadata:
+  name: mongo-order-sink
+  owner: platform-team
+  ownerTeam: "platform-team"
+  dataClass: INTERNAL
+  governanceNotes: null
+  revision: 2
+  updatedAt: 2026-03-06T07:20:51.952285216Z
+  lastPublishedAt: 2026-03-06T07:20:51.952285216Z
+  lastPublishResult: SUCCESS
+  commitSha: null
+
+selector:
+  connectorName: mongo-order-sink
+
+output:
+  mode: CONNECT_MAP
+  complexTypes: NATIVE_JSON
+
+fields:
+  - target: id
+    path: "$.claim.id"
+    type: STRING
+    required: false
+  - target: amount
+    path: "$.claim.amount"
+    type: STRING
+    required: false
+  - target: id2
+    path: "$.patient.id"
+    type: STRING
+    required: false
