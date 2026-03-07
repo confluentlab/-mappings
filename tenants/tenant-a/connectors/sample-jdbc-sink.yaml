@@ -17,7 +17,7 @@ selector:
   connectorName: sample-jdbc-sink
 
 output:
-  mode: CONNECT_MAP
+  mode: STRUCT
   complexTypes: JSON_STRING
 
 fields:
