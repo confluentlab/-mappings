@@ -7,11 +7,11 @@ metadata:
   ownerTeam: "platform-team"
   dataClass: INTERNAL
   governanceNotes: null
-  revision: 2
-  updatedAt: 2026-03-07T07:15:14.889280432Z
-  lastPublishedAt: 2026-03-07T07:15:14.889280432Z
+  revision: 3
+  updatedAt: 2026-03-07T07:40:04.254634152Z
+  lastPublishedAt: 2026-03-07T07:40:04.254634152Z
   lastPublishResult: SUCCESS
-  commitSha: null
+  commitSha: 71124ca
 
 selector:
   connectorName: sample-jdbc-sink
