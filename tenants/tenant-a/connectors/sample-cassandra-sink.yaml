@@ -1,0 +1,112 @@
+apiVersion: taas/v1
+kind: Mapping
+
+metadata:
+  name: sample-cassandra-sink
+  owner: platform-team
+  ownerTeam: "platform-team"
+  dataClass: INTERNAL
+  governanceNotes: null
+  revision: 2
+  updatedAt: 2026-03-07T14:35:36.403315638Z
+  lastPublishedAt: 2026-03-07T14:35:36.403315638Z
+  lastPublishResult: SUCCESS
+  commitSha: null
+
+selector:
+  connectorName: sample-cassandra-sink
+
+output:
+  profile: GENERIC
+  mode: CONNECT_MAP
+  complexTypes: NATIVE_JSON
+
+fields:
+  - target: eventId
+    path: "$.eventId"
+    type: STRING
+    required: true
+  - target: tenant
+    path: "$.tenant"
+    type: STRING
+    required: true
+  - target: claimId
+    path: "$.claim.id"
+    type: STRING
+    required: true
+  - target: claimStatus
+    path: "$.claim.status"
+    type: STRING
+    required: true
+  - target: totalAmount
+    path: "$.claim.total.amount"
+    type: DECIMAL
+    required: true
+  - target: currency
+    path: "$.claim.total.currency"
+    type: STRING
+    required: true
+  - target: patientId
+    path: "$.claim.patient.id"
+    type: STRING
+    required: true
+  - target: patientFirstName
+    path: "$.claim.patient.name.first"
+    type: STRING
+    required: false
+  - target: patientLastName
+    path: "$.claim.patient.name.last"
+    type: STRING
+    required: false
+  - target: patientDob
+    path: "$.claim.patient.dob"
+    type: DATE
+    required: false
+  - target: mobilePhone
+    path: "$.claim.patient.contacts[?type=='mobile'].value"
+    type: STRING
+    required: false
+  - target: email
+    path: "$.claim.patient.contacts[?type=='email'].value"
+    type: STRING
+    required: false
+  - target: providerNpi
+    path: "$.claim.provider.npi"
+    type: STRING
+    required: false
+  - target: providerCity
+    path: "$.claim.provider.address.city"
+    type: STRING
+    required: false
+  - target: procedureCodes
+    path: "$.claim.serviceLines[*].procedure"
+    type: JSON
+    required: false
+    mode: JSON
+  - target: diagnosisCodes
+    path: "$.claim.serviceLines[*].diagnosis"
+    type: JSON
+    required: false
+    mode: JSON
+  - target: lineCharges
+    path: "$.claim.serviceLines[*].charge"
+    type: JSON
+    required: false
+    mode: JSON
+  - target: payerId
+    path: "$.claim.adjudication.payer.id"
+    type: STRING
+    required: false
+  - target: remarks
+    path: "$.claim.adjudication.remarks"
+    type: JSON
+    required: false
+    mode: JSON
+  - target: sourceSystem
+    path: "$.meta.sourceSystem"
+    type: STRING
+    required: true
+  - target: ingestedAt
+    path: "$.meta.ingestedAt"
+    type: TIMESTAMP
+    required: true
