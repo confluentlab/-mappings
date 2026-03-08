@@ -1,0 +1,28 @@
+apiVersion: taas/v1
+kind: Mapping
+
+metadata:
+  name: artifact-smoke-65413
+  owner: admin
+  ownerTeam: "platform-team"
+  dataClass: INTERNAL
+  governanceNotes: "artifact smoke test"
+  revision: 2
+  updatedAt: 2026-03-08T10:41:07.292438524Z
+  lastPublishedAt: 2026-03-08T10:41:07.292438524Z
+  lastPublishResult: SUCCESS
+  commitSha: null
+
+selector:
+  connectorName: artifact-smoke-65413
+
+output:
+  profile: MONGO
+  mode: CONNECT_MAP
+  complexTypes: NATIVE_JSON
+
+fields:
+  - target: orderId
+    path: "$.order.id"
+    type: STRING
+    required: false
