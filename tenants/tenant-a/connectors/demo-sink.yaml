@@ -1,0 +1,36 @@
+apiVersion: taas/v1
+kind: Mapping
+
+metadata:
+  name: demo-sink
+  owner: platform-team
+  ownerTeam: "platform-team"
+  dataClass: INTERNAL
+  governanceNotes: null
+  revision: 2
+  updatedAt: 2026-03-08T06:13:22.353798884Z
+  lastPublishedAt: 2026-03-08T06:13:22.353798884Z
+  lastPublishResult: SUCCESS
+  commitSha: null
+
+selector:
+  connectorName: demo-sink
+
+output:
+  profile: MONGO
+  mode: CONNECT_MAP
+  complexTypes: NATIVE_JSON
+
+fields:
+  - target: id
+    path: "$.claim.id"
+    type: STRING
+    required: false
+  - target: amount
+    path: "$.claim.amount"
+    type: STRING
+    required: false
+  - target: id2
+    path: "$.patient.id"
+    type: STRING
+    required: false
